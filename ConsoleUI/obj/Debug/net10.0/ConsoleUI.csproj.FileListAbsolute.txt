@@ -16,3 +16,4 @@ C:\Users\tripp\source\repos\TheCSharpAcademy\FlashcardsApp\ConsoleUI\obj\Debug\n
 C:\Users\tripp\source\repos\TheCSharpAcademy\FlashcardsApp\ConsoleUI\obj\Debug\net10.0\ConsoleUI.pdb
 C:\Users\tripp\source\repos\TheCSharpAcademy\FlashcardsApp\ConsoleUI\obj\Debug\net10.0\ConsoleUI.genruntimeconfig.cache
 C:\Users\tripp\source\repos\TheCSharpAcademy\FlashcardsApp\ConsoleUI\obj\Debug\net10.0\ref\ConsoleUI.dll
+C:\Users\tripp\source\repos\TheCSharpAcademy\FlashcardsApp\ConsoleUI\obj\Debug\net10.0\ConsoleUI.sourcelink.json

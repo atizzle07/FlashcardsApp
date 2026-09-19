@@ -1,11 +1,20 @@
-﻿using ConsoleUI;
+﻿using System.Collections;
+using ConsoleUI;
 using Spectre.Console;
+using Stack = ConsoleUI.Models.Stack;
 
 var exitApp = false;
+Stack testStack = new Stack()
+{
+    Id = -1,
+    Name = "None Selected",
+    Cards = new()
+};
 
 UI.WelcomeMessage();
 do
 {
+    UI.DrawMenu(testStack);
     var userInput = UI.GetMainMenuChoice();
 
     switch (userInput)
@@ -21,6 +30,8 @@ do
         case UI.MainMenuOption.BeginStudySession:
             BeginStudySession();
             Console.ReadKey();
+            break;
+        case UI.MainMenuOption.ViewStudySessions:
             break;
         case UI.MainMenuOption.Exit:
             AnsiConsole.MarkupLine(

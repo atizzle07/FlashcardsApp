@@ -21,24 +21,25 @@ public class UI
         Console.ReadKey();
     }
 
-    public static void DrawMenu(Stack stack)
+    public static void DrawMenu(Stack? stack)
     {
         // This class shows a menu across each UI draw with the current selected stack and other pertinent information
-
         int cardCount = stack.Cards.Count();
         
         Console.Clear();
         var panel = new Panel($"Name: {stack.Name}\nCards: {cardCount}")
+            .Padding(0,5)
             .Header("Selected Stack")
-            .HeavyDashedWideBorder()
+            .HeavyBorder()
             .Expand();
         
         AnsiConsole.Write(panel);
+        Console.WriteLine();
+        Console.WriteLine();
     }
     
     public static MainMenuOption GetMainMenuChoice()
     {
-        Console.Clear();
         var userInput = AnsiConsole.Prompt(
             new SelectionPrompt<MainMenuOption>()
                 .Title("Please select a menu Option:")
@@ -48,7 +49,6 @@ public class UI
 
     public static ManageStackMenuOption GetManageStackMenuOption()
     {
-        Console.Clear();
         var userInput = AnsiConsole.Prompt(
             new SelectionPrompt<ManageStackMenuOption>()
                 .Title("Please select an Option:")
@@ -58,7 +58,6 @@ public class UI
 
     public static ManageCardsMenuOption GetManageCardsMenuOption()
     {
-        Console.Clear();
         var userInput = AnsiConsole.Prompt(
             new SelectionPrompt<ManageCardsMenuOption>()
                 .Title("Please select an Option:")
