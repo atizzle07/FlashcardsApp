@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "DqgC7AOq+7E=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\FlashcardsApp\\ConsoleUI\\ConsoleUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tripp\\.nuget\\packages\\spectre.console\\0.57.3-alpha.0.19\\spectre.console.0.57.3-alpha.0.19.nupkg.sha512",
+    "C:\\Users\\tripp\\.nuget\\packages\\spectre.console.ansi\\0.57.3-alpha.0.19\\spectre.console.ansi.0.57.3-alpha.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}
