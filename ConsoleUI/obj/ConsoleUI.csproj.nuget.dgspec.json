@@ -1,34 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\FlashcardsApp\\ConsoleUI\\ConsoleUI.csproj": {}
+    "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\ConsoleApps\\FlashCardsApp\\ConsoleUI\\ConsoleUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\FlashcardsApp\\ConsoleUI\\ConsoleUI.csproj": {
+    "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\ConsoleApps\\FlashCardsApp\\ConsoleUI\\ConsoleUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\FlashcardsApp\\ConsoleUI\\ConsoleUI.csproj",
+        "projectUniqueName": "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\ConsoleApps\\FlashCardsApp\\ConsoleUI\\ConsoleUI.csproj",
         "projectName": "ConsoleUI",
-        "projectPath": "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\FlashcardsApp\\ConsoleUI\\ConsoleUI.csproj",
+        "projectPath": "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\ConsoleApps\\FlashCardsApp\\ConsoleUI\\ConsoleUI.csproj",
         "packagesPath": "C:\\Users\\tripp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\FlashcardsApp\\ConsoleUI\\obj\\",
+        "outputPath": "C:\\Users\\tripp\\source\\repos\\TheCSharpAcademy\\ConsoleApps\\FlashCardsApp\\ConsoleUI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 26.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\tripp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 26.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tripp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 26.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,6 +46,18 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[11.0.0-rc.1.26425.128, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[11.0.0-rc.1.26425.128, )"
+            },
             "Spectre.Console": {
               "target": "Package",
               "version": "[0.57.3-alpha.0.19, )"

@@ -1,44 +1,20 @@
-﻿using ConsoleUI.Models;
-using Spectre.Console;
-using Spectre.Console.Rendering;
+﻿using Spectre.Console;
 
-namespace ConsoleUI;
+namespace FlashCards.Services;
 
-public class UI
+public static class UI
 {
     public static void WelcomeMessage()
     {
-        var header = new FigletText("Flashcards")
-        {
-            Justification = Justify.Center
-        };
-        header.Color(Color.Blue);
-        AnsiConsole.Write(header);
-        
         AnsiConsole.MarkupLine("[bold orange3]Welcome to the Flashcard Application![/]\n");
         AnsiConsole.MarkupLine("[bold orange3]In this application you will manage and study stacks of flash cards.[/]");
         AnsiConsole.MarkupLine("[bold orange3]To Continue, please press Enter... [/]");
         Console.ReadKey();
     }
 
-    public static void DrawMenu(Stack? stack)
-    {
-        int cardCount = stack.Cards.Count();
-        
-        Console.Clear();
-        var panel = new Panel($"Name: {stack.Name}\nCards: {cardCount}")
-            .Padding(0,5)
-            .Header("Selected Stack")
-            .HeavyBorder()
-            .Expand();
-        
-        AnsiConsole.Write(panel);
-        Console.WriteLine();
-        Console.WriteLine();
-    }
-    
     public static MainMenuOption GetMainMenuChoice()
     {
+        Console.Clear();
         var userInput = AnsiConsole.Prompt(
             new SelectionPrompt<MainMenuOption>()
                 .Title("Please select a menu Option:")
@@ -48,6 +24,7 @@ public class UI
 
     public static ManageStackMenuOption GetManageStackMenuOption()
     {
+        Console.Clear();
         var userInput = AnsiConsole.Prompt(
             new SelectionPrompt<ManageStackMenuOption>()
                 .Title("Please select an Option:")
@@ -57,13 +34,14 @@ public class UI
 
     public static ManageCardsMenuOption GetManageCardsMenuOption()
     {
+        Console.Clear();
         var userInput = AnsiConsole.Prompt(
             new SelectionPrompt<ManageCardsMenuOption>()
                 .Title("Please select an Option:")
                 .AddChoices(Enum.GetValues<ManageCardsMenuOption>()));
         return userInput;
     }
-    
+
     public enum MainMenuOption
     {
         ManageStacks,

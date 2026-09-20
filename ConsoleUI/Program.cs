@@ -4,17 +4,17 @@ using Spectre.Console;
 using Stack = ConsoleUI.Models.Stack;
 
 var exitApp = false;
-Stack testStack = new Stack()
+Stack activeStack = new Stack()
 {
     Id = -1,
-    Name = "None Selected",
-    Cards = new()
+    Name = "None Selected"
 };
 
 UI.WelcomeMessage();
-do
+
+while (!exitApp)
 {
-    UI.DrawMenu(testStack);
+    UI.DrawMenu(activeStack);
     var userInput = UI.GetMainMenuChoice();
 
     switch (userInput)
@@ -42,7 +42,7 @@ do
         default:
             break;
     }
-} while (!exitApp);
+}
 static void ManageStacks()
 {
     AnsiConsole.MarkupLine("[bold orange3]You have reached the Manage Cards Menu. Select an Option: [/]");
@@ -60,8 +60,13 @@ static void ManageStacks()
     }
 }
 
-static void ManageCards()
+void ManageCards()
 {
+    if (activeStack.Id < 0)
+    {
+        AnsiConsole.MarkupLine("[bold red]Error: No Stack selected.[/]");
+        return;
+    }
     AnsiConsole.MarkupLine("[bold orange3]You have reached the Manage Cards Menu. Select an Option: [/]");
     var choice = UI.GetManageCardsMenuOption();
     switch (choice)
