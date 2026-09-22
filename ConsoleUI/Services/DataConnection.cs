@@ -16,4 +16,20 @@ public class DataConnection
 
         return new SqlConnection(connectionString);
     }
+
+    private static void CreateDatabase()
+    {
+        throw new NotImplementedException();
+        
+        // Create database
+        
+        // Create card table
+        
+        // Create stack table
+    }
+
+    private static void CreateDbTables()
+    {
+        throw new NotImplementedException();
+    }
 }
