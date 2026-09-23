@@ -1,7 +1,24 @@
 ﻿using System.Collections;
 using ConsoleUI;
+using ConsoleUI.Services;
 using Spectre.Console;
 using Stack = ConsoleUI.Models.Stack;
+
+DataConnection dc = new DataConnection();
+
+try
+{
+    dc.CreateDatabase();
+    int[] success = dc.CreateTables();
+    Console.WriteLine(success);
+}
+catch (Exception e)
+{
+    Console.WriteLine($"An error occurred: {e}");
+}
+
+Console.WriteLine("Application Reached!");
+Console.ReadKey();
 
 var exitApp = false;
 Stack activeStack = new Stack()

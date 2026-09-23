@@ -8,10 +8,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.1.86" />
       <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="11.0.0-rc.1.26425.128" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="11.0.0-rc.1.26425.128" />
       <PackageReference Include="Spectre.Console" Version="0.57.3-alpha.0.19" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
