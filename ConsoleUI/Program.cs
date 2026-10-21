@@ -4,11 +4,11 @@ using ConsoleUI.Services;
 using Spectre.Console;
 using Stack = ConsoleUI.Models.Stack;
 
-DataConnection dc = new DataConnection();
+DataConnection dc = new();
 
 try
 {
-    dc.CreateDatabase();
+    // dc.CreateDatabase();
     int[] success = dc.CreateTables();
     Console.WriteLine(success);
 }
@@ -111,6 +111,3 @@ static void BeginStudySession()
 {
     AnsiConsole.MarkupLine("[bold orange3]Study Session feature not complete. Press [black on white]Enter[/] to return to menu[/]");
 }
-
-
-

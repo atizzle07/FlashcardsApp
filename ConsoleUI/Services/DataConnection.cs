@@ -29,7 +29,7 @@ public class DataConnection
 
             USE flashcards;
             """;
-        
+
         using var conn = new SqlConnection(_config.GetConnectionString("Default"));
         conn.Execute(sqlCreateDb);
     }
@@ -57,8 +57,8 @@ public class DataConnection
                         REFERENCES card
             );
             """;
-        
-        
+
+
         using var conn = new SqlConnection(_config.GetConnectionString("Default"));
         var CardTableCreated = conn.Execute(sqlCreateCardTable);
         var StackTableCreated = conn.Execute(sqlCreateStackTable);
