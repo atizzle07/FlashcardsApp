@@ -1,6 +1,5 @@
 ﻿using ConsoleUI.Models;
 using Spectre.Console;
-using Spectre.Console.Rendering;
 
 namespace ConsoleUI;
 
@@ -14,7 +13,7 @@ public class UI
         };
         header.Color(Color.Blue);
         AnsiConsole.Write(header);
-        
+
         AnsiConsole.MarkupLine("[bold orange3]Welcome to the Flashcard Application![/]\n");
         AnsiConsole.MarkupLine("[bold orange3]In this application you will manage and study stacks of flash cards.[/]");
         AnsiConsole.MarkupLine("[bold orange3]To Continue, please press Enter... [/]");
@@ -23,27 +22,26 @@ public class UI
 
     public static void DrawMenu(Stack? stack)
     {
-        int cardCount = stack.Cards.Count();
-        
+        int cardCount = stack.Cards.Count;
+
         Console.Clear();
         var panel = new Panel($"Name: {stack.Name}\nCards: {cardCount}")
-            .Padding(0,5)
+            .Padding(0, 5)
             .Header("Selected Stack")
             .HeavyBorder()
             .Expand();
-        
+
         AnsiConsole.Write(panel);
         Console.WriteLine();
         Console.WriteLine();
     }
-    
+
     public static MainMenuOption GetMainMenuChoice()
     {
-        var userInput = AnsiConsole.Prompt(
+        return AnsiConsole.Prompt(
             new SelectionPrompt<MainMenuOption>()
                 .Title("Please select a menu Option:")
                 .AddChoices(Enum.GetValues<MainMenuOption>()));
-        return userInput;
     }
 
     public static ManageStackMenuOption GetManageStackMenuOption()
@@ -63,7 +61,7 @@ public class UI
                 .AddChoices(Enum.GetValues<ManageCardsMenuOption>()));
         return userInput;
     }
-    
+
     public enum MainMenuOption
     {
         ManageStacks,

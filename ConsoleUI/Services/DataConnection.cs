@@ -1,7 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
-using Dapper;
 namespace ConsoleUI.Services;
 
 public class DataConnection
@@ -38,12 +37,19 @@ public class DataConnection
     {
         const string sqlCreateCardTable =
             """
-             CREATE TABLE IF NOT EXISTS card (
-                 Id bigint not null primary key,
-                 Name nvarchar(50),
-                 Question nvarchar(200),
-                 Answer nvarchar(200),
-                 )
+            IF NOT EXISTS (
+                SELECT 1
+                FROM sys.tables
+                WHERE name = 'card'
+            )
+            BEGIN
+                CREATE TABLE card (
+                    Id BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+                    Name NVARCHAR(50),
+                    Question NVARCHAR(200),
+                    Answer NVARCHAR(200)
+                );
+            END;
             """;
         const string sqlCreateStackTable =
             """
@@ -58,11 +64,28 @@ public class DataConnection
             );
             """;
 
-
         using var conn = new SqlConnection(_config.GetConnectionString("Default"));
         var CardTableCreated = conn.Execute(sqlCreateCardTable);
         var StackTableCreated = conn.Execute(sqlCreateStackTable);
 
         return [CardTableCreated, StackTableCreated];
+    }
+
+    public void CreateStack()
+    {
+        //TODO - implement CreateStack feature
+        throw new NotImplementedException();
+    }
+
+    public void UpdateActiveStack()
+    {
+        //TODO - implement UpdateActiveStack method
+        throw new NotImplementedException();
+    }
+
+    public void GetStackById(int id)
+    {
+        //TODO - implement GetStackById method
+        throw new NotImplementedException();
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using ConsoleUI;
+﻿using ConsoleUI;
 using ConsoleUI.Services;
 using Spectre.Console;
 using Stack = ConsoleUI.Models.Stack;
@@ -8,7 +7,7 @@ DataConnection dc = new();
 
 try
 {
-    // dc.CreateDatabase();
+    dc.CreateDatabase();
     int[] success = dc.CreateTables();
     Console.WriteLine(success);
 }
@@ -21,8 +20,8 @@ Console.WriteLine("Application Reached!");
 Console.ReadKey();
 
 var exitApp = false;
-Stack activeStack = new Stack()
-{
+Stack activeStack = new Stack() //On app start, set the active stack to none
+{ 
     Id = -1,
     Name = "None Selected"
 };
@@ -49,6 +48,7 @@ while (!exitApp)
             Console.ReadKey();
             break;
         case UI.MainMenuOption.ViewStudySessions:
+            ViewStudySessions();
             break;
         case UI.MainMenuOption.Exit:
             AnsiConsole.MarkupLine(
@@ -60,6 +60,8 @@ while (!exitApp)
             break;
     }
 }
+
+
 static void ManageStacks()
 {
     AnsiConsole.MarkupLine("[bold orange3]You have reached the Manage Cards Menu. Select an Option: [/]");
@@ -108,6 +110,12 @@ void ManageCards()
 }
 
 static void BeginStudySession()
+{
+    AnsiConsole.MarkupLine("[bold orange3]Study Session feature not complete. Press [black on white]Enter[/] to return to menu[/]");
+}
+
+
+void ViewStudySessions()
 {
     AnsiConsole.MarkupLine("[bold orange3]Study Session feature not complete. Press [black on white]Enter[/] to return to menu[/]");
 }

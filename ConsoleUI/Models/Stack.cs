@@ -3,7 +3,7 @@
 public class Stack
 {
     public int Id { get; set; }
-    public string  Name { get; set; } = "";
+    public string Name { get; set; } = "";
     public string Description { get; set; } = "";
-    public List<Card> Cards {get; set;} = new();
+    public List<Card> Cards { get; set; } = new();
 }
